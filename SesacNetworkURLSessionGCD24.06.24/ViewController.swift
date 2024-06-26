@@ -7,13 +7,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewcontroller {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("VC", #function)
     }
 
-
+    //서브뷰
+    override func configureHierarchy() {
+        print("VC", #function)
+        
+    }
+    
+    //스냅킷
+    override func configureLayout(){
+        print("VC", #function)
+    }
+    
+    //백그라운드
+    override func configureView(){
+        print("VC", #function)
+    }
 }
-
