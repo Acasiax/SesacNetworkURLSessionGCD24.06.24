@@ -35,15 +35,16 @@ class PosterViewController: BaseViewcontroller {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        TMDBManager.shared.callRequest()
         
-        let group = DispatchGroup() // +1
+        let group = DispatchGroup() // +2
         
         group.enter() //일을 보내기 직전에 호출 // +1
         DispatchQueue.global().async(group: group) {
             
             
-            TMDBAPI.shared.trendingMovies { movie, error in
-                
+            TMDBAPI.shared.trending(api: .trendingTV) { movie, error in
                 if let error = error {
                     print(error)  //사용자에게 상황 고지
                 } else {
@@ -71,8 +72,8 @@ class PosterViewController: BaseViewcontroller {
         DispatchQueue.global().async(group: group) {
             
             
-            TMDBAPI.shared.trendingMovies { movie, error in
-                
+      //      TMDBAPI.shared.trendingMovies(api: .trendingMovie) { movie, error in
+            TMDBAPI.shared.trending(api: .trendingMovie) { movie, error in
                 if let error = error {
                     print(error)  //사용자에게 상황 고지
                 } else {

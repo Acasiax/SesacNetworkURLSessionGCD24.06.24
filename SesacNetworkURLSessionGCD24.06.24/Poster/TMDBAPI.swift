@@ -38,15 +38,10 @@ class TMDBAPI {
     
     //best
     //성공했을 때는 [TrendingDetail] 오고, 실패했을 때는 String 에러메세지를 던저 줄 것, 근데 실패했을 때는 데이터가 안오니깐 두가지 매개변수를 동시에 받겠다 ->  ? 옵셔널을 넣어줌 ([TrendingDetail]?, String?) -> 튜플타입
-    func trendingMovies(completionHandler: @escaping TrendingHandler) {
+    func trending(api: TMDBRequest, completionHandler: @escaping TrendingHandler) {
         print(#function)
-        
-        let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=\(APIKey.tmdb)&language=ko-KR"
-        
-        let header: HTTPHeaders = [
-                   "Authorization" : APIKey.tmdb ]
-        
-        AF.request(url, method: .get, headers: header)
+
+        AF.request(api.endPoint, method: api.method, parameters: api.parameter, encoding: URLEncoding(destination: .queryString), headers: api.header)
             .validate(statusCode: 200..<500)
             .responseDecodable(of: Trending.self) { response in
             
@@ -137,28 +132,30 @@ class TMDBAPI {
         }
     
     
-    func trendingTV() {
-            print(#function)
-            let url = "https://api.themoviedb.org/3/trending/tv/day?language=ko-KR"
-            
-            let header: HTTPHeaders = [
-                "Authorization": APIKey.tmdb
-            ]
-            
-            AF.request(url,
-                       method: .get,
-                       headers: header)
-            .validate(statusCode: 200..<500)
-            .responseDecodable(of: Trending.self) { response in
-                 
-                switch response.result {
-                case .success(let value):
-                    print("SUCCESS")
-                    dump(value)
-                case .failure(let error):
-                    print("FAILED")
-                    print(error)
-                }
-            }
-        }
+//    func trendingTV(api: TMDBRequest, completionHandle: @escaping TrendingHandler) {
+//            print(#function)
+//            let url = "https://api.themoviedb.org/3/trending/tv/day?language=ko-KR"
+//            
+//            let header: HTTPHeaders = [
+//                "Authorization": APIKey.tmdb
+//            ]
+//            
+//        AF.request(api.endPoint,
+//                   method: api.method,
+//                   parameters: api.parameter,
+//                   encoding: URLEncoding(destination: .queryString),
+//                   headers: api.header)
+//            .validate(statusCode: 200..<500)
+//            .responseDecodable(of: Trending.self) { response in
+//                 
+//                switch response.result {
+//                case .success(let value):
+//                    print("SUCCESS")
+//                    dump(value)
+//                case .failure(let error):
+//                    print("FAILED")
+//                    print(error)
+//                }
+//            }
+//        }
 }

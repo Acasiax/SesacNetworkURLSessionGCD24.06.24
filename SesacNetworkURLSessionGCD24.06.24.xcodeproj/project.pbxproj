@@ -67,6 +67,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA376A6F2C2C964C00C371E6 /* 네트워크 */ = {
+			isa = PBXGroup;
+			children = (
+				AA5850F52C2BAA3A007B92FD /* TMDBRequest.swift */,
+				AA5850F72C2BC14D007B92FD /* TMDBMamager.swift */,
+			);
+			name = "네트워크";
+			path = "네트워크";
+			sourceTree = "<group>";
+		};
 		AA5850A42C290C2A007B92FD = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5850F32C2A9194007B92FD /* APIKey.swift */,
-				AA5850F52C2BAA3A007B92FD /* TMDBRequest.swift */,
+				AA376A6F2C2C964C00C371E6 /* 네트워크 */,
 				AA5850EA2C2A59DE007B92FD /* 서치 */,
 				AA5850D82C2A504B007B92FD /* Poster */,
 				AA5850D52C2A4B9B007B92FD /* Base */,
@@ -98,7 +108,6 @@
 				AA5850B92C290C2C007B92FD /* Assets.xcassets */,
 				AA5850BB2C290C2C007B92FD /* LaunchScreen.storyboard */,
 				AA5850BE2C290C2C007B92FD /* Info.plist */,
-				AA5850F72C2BC14D007B92FD /* TMDBMamager.swift */,
 			);
 			path = SesacNetworkURLSessionGCD24.06.24;
 			sourceTree = "<group>";
