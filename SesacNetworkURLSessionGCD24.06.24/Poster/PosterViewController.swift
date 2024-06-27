@@ -36,14 +36,12 @@ class PosterViewController: BaseViewcontroller {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        TMDBManager.shared.callRequest()
+        //TMDBManager.shared.callRequest(completionHandler: <#(Lotto?, jackError?) -> Void#>)
         
         let group = DispatchGroup() // +2
         
         group.enter() //일을 보내기 직전에 호출 // +1
         DispatchQueue.global().async(group: group) {
-            
-            
             TMDBAPI.shared.trending(api: .trendingTV) { movie, error in
                 if let error = error {
                     print(error)  //사용자에게 상황 고지
@@ -52,7 +50,6 @@ class PosterViewController: BaseViewcontroller {
                     self.imageList[0] = movie
                 }
                 group.leave()  //한번만 작성해도 네트워킹이 성공, 실패 했던 실행됨
-                
             }
 
         }
@@ -60,7 +57,7 @@ class PosterViewController: BaseViewcontroller {
         
         DispatchQueue.global().async(group: group) {
             
-            
+            group .enter()
       //      TMDBAPI.shared.trendingMovies(api: .trendingMovie) { movie, error in
             TMDBAPI.shared.trending(api: .trendingMovie) { movie, error in
                 if let error = error {

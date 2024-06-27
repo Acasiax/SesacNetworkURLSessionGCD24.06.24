@@ -26,7 +26,7 @@ enum TMDBRequest {
     }
     
     var header: HTTPHeaders {
-        return ["Authorization": APIKey.tmdb]
+        return ["Authorization": APIKey.key]
     }
     
     

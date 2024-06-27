@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA376A712C2D38BD00C371E6 /* UI+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA376A702C2D38BD00C371E6 /* UI+EXT.swift */; };
 		AA5850B12C290C2A007B92FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850B02C290C2A007B92FD /* AppDelegate.swift */; };
 		AA5850B32C290C2A007B92FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850B22C290C2A007B92FD /* SceneDelegate.swift */; };
 		AA5850B52C290C2A007B92FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850B42C290C2A007B92FD /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA376A702C2D38BD00C371E6 /* UI+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+EXT.swift"; sourceTree = "<group>"; };
 		AA5850AD2C290C2A007B92FD /* SesacNetworkURLSessionGCD24.06.24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SesacNetworkURLSessionGCD24.06.24.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5850B02C290C2A007B92FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA5850B22C290C2A007B92FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +72,10 @@
 		AA376A6F2C2C964C00C371E6 /* 네트워크 */ = {
 			isa = PBXGroup;
 			children = (
+				AA5850F12C2A8C8E007B92FD /* TMDBAPI.swift */,
 				AA5850F52C2BAA3A007B92FD /* TMDBRequest.swift */,
 				AA5850F72C2BC14D007B92FD /* TMDBMamager.swift */,
+				AA376A702C2D38BD00C371E6 /* UI+EXT.swift */,
 			);
 			name = "네트워크";
 			path = "네트워크";
@@ -128,7 +132,6 @@
 				AA5850D92C2A5070007B92FD /* PosterViewController.swift */,
 				AA5850DF2C2A525B007B92FD /* PosterTableViewCell.swift */,
 				AA5850EF2C2A6FCF007B92FD /* PosterCollectionViewCell.swift */,
-				AA5850F12C2A8C8E007B92FD /* TMDBAPI.swift */,
 			);
 			path = Poster;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5850F02C2A6FCF007B92FD /* PosterCollectionViewCell.swift in Sources */,
+				AA376A712C2D38BD00C371E6 /* UI+EXT.swift in Sources */,
 				AA5850EE2C2A62B1007B92FD /* SearchView.swift in Sources */,
 				AA5850DA2C2A5070007B92FD /* PosterViewController.swift in Sources */,
 				AA5850B52C290C2A007B92FD /* ViewController.swift in Sources */,
