@@ -131,31 +131,5 @@ class TMDBAPI {
             }
         }
     
-    
-//    func trendingTV(api: TMDBRequest, completionHandle: @escaping TrendingHandler) {
-//            print(#function)
-//            let url = "https://api.themoviedb.org/3/trending/tv/day?language=ko-KR"
-//            
-//            let header: HTTPHeaders = [
-//                "Authorization": APIKey.tmdb
-//            ]
-//            
-//        AF.request(api.endPoint,
-//                   method: api.method,
-//                   parameters: api.parameter,
-//                   encoding: URLEncoding(destination: .queryString),
-//                   headers: api.header)
-//            .validate(statusCode: 200..<500)
-//            .responseDecodable(of: Trending.self) { response in
-//                 
-//                switch response.result {
-//                case .success(let value):
-//                    print("SUCCESS")
-//                    dump(value)
-//                case .failure(let error):
-//                    print("FAILED")
-//                    print(error)
-//                }
-//            }
-//        }
+
 }

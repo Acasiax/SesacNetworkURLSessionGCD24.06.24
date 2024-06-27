@@ -54,17 +54,6 @@ class PosterViewController: BaseViewcontroller {
                 group.leave()  //한번만 작성해도 네트워킹이 성공, 실패 했던 실행됨
                 
             }
-//            //성공했을 때
-//            TMDBAPI.shared.trendingMovies { data in
-//                self.imageList[0] = data
-//                print("111⛑️\(data)")
-//                group.leave() // -1
-//           
-//            } errorHandler: { value in  //실패했을때
-//                print(value) //얼럿으로 사용자에게 표시
-//                self.imageList.remove(at: 0)  //리무브 해주는 데이터 가공 
-//                group.leave() //오류여도 해제하게
-//            }
 
         }
         
@@ -85,23 +74,7 @@ class PosterViewController: BaseViewcontroller {
             }
         }
         
-        
-//        group.enter() //일을 보내기 직전에 호출 // +2
-//        DispatchQueue.global().async(group: group) {
-//            //성공했을 때
-//            TMDBAPI.shared.trendingMovies { data in
-//                self.imageList[1] = data
-//                print("222⛑️\(data)")
-//                group.leave() // -1
-//           
-//            } errorHandler: { value in  //실패했을때
-//                print(value) //얼럿으로 사용자에게 표시
-//                group.leave() //오류여도 해제하게
-//            }
-//
-//        }
-        
-        
+      
         //enter,leave -> 제로 0 이 되는 시점에 이게 실행 될 것은
         group.notify(queue: .main) {
             print("3333")
@@ -114,40 +87,7 @@ class PosterViewController: BaseViewcontroller {
     //main global
     // global qos
     // dispatchgroup
-    
-    func aboutGCD() {
-        
-        let group = DispatchGroup()
-        
-        DispatchQueue.global().async(group: group) {
-            for item in 1...100 {
-                print(item, terminator: " ")
-            }
-        }
-        
-        DispatchQueue.global().async(group: group) {
-            for item in 101...200 {
-                print(item, terminator: " ")
-            }
-        }
-        
-        DispatchQueue.global().async(group: group) {
-            for item in 201...300 {
-                print(item, terminator: " ")
-            }
-        }
-        
-        DispatchQueue.global().async(group: group) {
-            for item in 301...400 {
-                print(item, terminator: " ")
-            }
-        }
-        group.notify(queue: .main) {
-            print("4명 알바생 업무 끝났어요")
-        }
-        
-    }
-    
+
     
     //서브뷰
     override func configureHierarchy() {
@@ -223,3 +163,15 @@ extension PosterViewController: UICollectionViewDataSource, UICollectionViewDele
     
     
 }
+
+
+//HTTP
+//1. request 단방향 통신
+//2. connectionless 비연결성
+//3. stateless 무상태성 (식별x) 요청한 유저가 누구인지 모름, 이전에 유저에 검색한게 무엇인지 모름. ->그래서 식별할 수 있는게 필요함-> 토큰, 세션, 쿠키를 활욯한다. (16회차 강의 자료에 있다고 함)
+
+
+// 면접 질문 http의 특성은?
+// 단방향 통신의 근거나 이유는? 단방향 통신이 뭔지, 비연결성이 뭔지 그래서 이 특성을 어떻게 연결할 수 있는지. 비연결성이 무엇이에요?
+
+
